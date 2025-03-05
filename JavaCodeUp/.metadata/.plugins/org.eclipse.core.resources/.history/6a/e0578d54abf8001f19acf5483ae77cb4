@@ -1,0 +1,10 @@
+
+public class Ans7Print07 {
+
+	public static void main(String[] args) {
+		//출력 : "!@#$%^&*()"
+		System.out.print("C:\\Download\\hello.cpp");
+		
+	}
+
+}

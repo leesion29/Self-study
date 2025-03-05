@@ -1,0 +1,9 @@
+
+public class Ans2Print02 {
+
+	public static void main(String[] args) {
+		// print를 이용하여 Hello World를 출력한다
+		System.out.print("Hello"+" World");
+	}
+
+}
