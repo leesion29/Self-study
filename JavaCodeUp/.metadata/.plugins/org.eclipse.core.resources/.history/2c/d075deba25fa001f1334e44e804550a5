@@ -1,0 +1,13 @@
+import java.util.Scanner;
+
+public class Ans40Negative {
+
+	public static void main(String[] args) {
+		// 정수 1개를 입력 받기
+		Scanner sc = new Scanner(System.in);
+		int num = sc.nextInt();
+
+		System.out.printf("%d", -num);
+	}
+
+}

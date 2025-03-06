@@ -1,0 +1,12 @@
+import java.util.Scanner;
+
+public class Ans37ASCII2 {
+
+	public static void main(String[] args) {
+		// INT TO ASCII
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		char ch = n;
+		System.out.print(n);
+	}
+}

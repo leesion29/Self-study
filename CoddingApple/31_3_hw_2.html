@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        for(i = 2; i<=9; i++){
+            for(j = 1; j<=9; j++){
+                console.log(i*j)
+            }
+        console.log("=========")
+        }
+
+
+        function compareAvgScore(oldScore, newScore) {
+            let sum = 0;
+            let len = oldScore.length;
+            for (i of oldScore){
+                sum += i
+            }
+            let avg = Math.round(sum/len);
+            if (avg < newScore) {
+                let upScore = newScore-avg;
+                console.log(`평균보다 ${upScore}점이 올랐네요`)
+            }
+            else if(avg > newScore) {
+                let downScore = avg-newScore;
+                console.log(`평균보다 ${downScore}점이 떨어졌네요`)
+            }
+            else{
+                console.log("이전 평균과 현재 점수가 동일하네요")
+            }
+        }
+
+        compareAvgScore([10, 20, 30, 40, 50], 40)
+        compareAvgScore([40, 40, 40], 20)
+    </script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>practice</title>
+  </head>
+  <body>
+    <h3 style="background-color: lightsteelblue;">함수 테스트 - 개발자 도구로 결과 확인</h3><br>
+    func369Games 함수 테스트
+    <hr>
+    <button onclick="func369Games(6)">숫자 6</button> <button onclick="func369Games(12)">숫자 12</button> <button onclick="func369Games(11)">숫자 11</button>
+  
+    <br><br>upgrade369Games 함수 테스트
+    <hr>
+    <button onclick="upgrade369Games(6)">숫자 6</button> <button onclick="upgrade369Games(9)">숫자 9</button> <button onclick="upgrade369Games(11)">숫자 11</button>
+  
+    <br><br>scDiscriminator 함수 테스트
+    <hr>
+    <button onclick="scDiscriminator(70, 70)">70, 70</button> <button onclick="scDiscriminator(30, 100)">30, 100</button> <button onclick="scDiscriminator(50, 50)">50, 50</button>
+    
+    <br><br>응용2 테스트
+    <hr>
+    <button onclick="inputSc()">응용2 테스트</button>
+  </body>
+
+  <script>
+// 변수와 함수는 lowerCamelCase로 표기하자.
+
+    // Q.1 매개변수로 임의의 숫자를 넣었을 때, 그 숫자가 3의 배수라면 박수, 아니라면 통과를 출력하는 함수를 만드시오.
+    function func369Games(num){
+      if(num%3==0){
+        console.log('박수');
+      }
+      else{
+        console.log('통과')
+      }
+    }
+    // Q.2 위에서 업그레이드 된 함수를 만드시오. 숫자가 9의 배수라면 박수를 두 번 치도록 고쳐야 합니다.
+    function upgrade369Games(num){
+      let print = '';
+      if(num%3==0){
+        print = '박수';
+        if(num%9==0)
+          print = '박수X2';
+      }
+      else{
+        print = '통과';
+      }
+      console.log(print)
+    }
+    // Q.3 공인중개사 시험점수를 입력 시 합격여부를 알려주는 함수를 만드시오.
+    // 조건 : 두 과목 합산 120점 합격, 한 과목이 40점 미만이라면 과락입니다.
+    function scDiscriminator(sc1, sc2){
+      let score = (sc1 + sc2);
+      // 만일 두 과목 합산이 120점이라면
+      
+      if (score >= 120){
+      // 두 과목 중 과락이 있는 지 체크한다
+        if(sc1 < 40 || sc2 < 40) {
+          // 과락이 있다면, 불합격 출력
+          console.log('불합격');
+        }
+          // 과락이 없다면, 합격 출력
+        else{
+          console.log('합격');
+        }
+      }
+      // 이외의 경우, 불합격
+      else{
+        console.log('불합격');
+      }
+    }
+    // Q.응용 369게임 함수를 만듭시다. 끝 자리가 3, 6, 9로 끝나는 수인 경우 박수를 출력하세요.
+    function advancedFunc01(num){
+      // 일의 자리 숫자를 구하기 : 숫자를 10으로 나눈 나머지 값
+      let remainderValue = num % 10;
+      if (remainderValue == 3 || remainderValue == 6 || remainderValue == 9){
+        console.log(num + ' 박수');
+      }
+      else{
+        console.log(num + ' 통과');
+      }
+    }
+
+    // 결과 확인
+    advancedFunc01(3);
+    advancedFunc01(6);
+    advancedFunc01(9);
+    advancedFunc01(222);
+    advancedFunc01(333);
+
+    // Q.응용2 공인중개사 판독기 함수에 입력된 숫자가 0~100이 아니라면 올바른 값이 아니라고 alert를 띄우세요.
+    // 점수 입력용 함수
+    function inputSc(){
+      let sc1 = prompt('공인중개사 점수를 입력하세요');
+      let sc2 = prompt('공인중개사 점수를 입력하세요2');
+      newScDiscriminator(sc1, sc2)
+    }
+
+    function newScDiscriminator(sc1, sc2){
+      
+      if( (sc1 >= 0 && sc1 <=100) && (sc2 >= 0 && sc2 <=100) ){
+        let score = (sc1 + sc2);
+        if (score >= 120){
+          if(sc1 < 40 || sc2 < 40) {
+            console.log('불합격');
+          }
+          else{
+            console.log('합격');
+          }
+        }
+
+        else{
+          console.log('불합격');
+        }
+    }
+    else {
+      alert('장난치지 말고 올바른 값을 입력하세요!!!');
+    }
+  }
+  </script>
+</html>
+

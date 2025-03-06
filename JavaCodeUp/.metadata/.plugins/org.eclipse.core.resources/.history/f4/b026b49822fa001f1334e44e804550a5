@@ -1,0 +1,13 @@
+import java.util.Scanner;
+
+public class Ans36ASCII {
+
+	public static void main(String[] args) {
+		// ASCII TO DEC
+		Scanner sc = new Scanner(System.in);
+		String eng = sc.next();
+		int dec = Integer.parseInt(eng);
+		System.out.println(dec);
+	}
+
+}

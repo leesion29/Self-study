@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>querySelector</title>
+  <link rel="stylesheet" href="02_main.css" />
+</head>
+<body>
+  <!-- 지금까지 썼던 셀렉터를 쿼리셀렉터로 바꿔보세요 -->
+  <p>
+    01. <h1 id = "hello">HELLO!</h1> <h2 id = "hi">world</h2>
+  </p><br>
+
+    02. <div class="alert-box" id="alert">
+      <p id = "msg">알림창임</p>
+      <button onclick="alert_test('none')">닫기</button>
+    </div>
+    <button onclick="alert_test('block', '아이디를 입력해주세요')">버튼1</button>
+    <button onclick="alert_test('block', '비밀번호를 입력해주세요')">버튼2</button>
+  </p><br>
+  <p class="p">
+    03. backgroundColor test
+  </p>
+  <p class="p">backgroundColor test2</p>
+  <script>
+       // id => #, class => .
+       const select = document.querySelector("#hello");
+       select.style.color = "red";
+       select.style.fontSize = "16px";
+       select.innerHTML = "안녕";
+
+       const select2 = document.querySelector("#hi");
+       select2.innerHTML = "JS 초보에요";
+
+       for(let i=0; i<=2; i++){
+        const selectAll = document.querySelectorAll('.p')[i];
+        selectAll.style.backgroundColor = 'lightgrey';
+       }
+
+      function alert_test(tag, msg) {
+        const select3 = document.querySelectorAll("#alert")[0];
+        const select4 = document.querySelectorAll("#msg")[0];
+        select3.style.display = tag;
+        select4.innerHTML = msg;
+      }
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <link rel="stylesheet" href="21_main.css" />
+
+  <title>Hello, world!</title>
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+
+<body>
+  <div class="container mt-3">
+    <div class="card p-3">
+      <p><span id="products">상품명 들어갈 자리</span> / <span id="price">가격 들어갈 자리</span></p>
+    </div>
+  </div>
+
+  <form class="container my-5 form-group">
+    <p>상품선택</p>
+  
+    <select class="form-select mt-2" id="sel">
+      <option>모자</option>
+      <option>셔츠</option>
+      <option>바지</option>
+    </select>
+  
+    <select class="form-select mt-2 hidden" id="size">
+      <option class="L">95</option>
+      <option class="XL">100</option>
+    </select>
+
+    <!-- <select class="form-select mt-2 hidden" id="size">
+      <option>28</option>
+      <option>30</option> -->
+
+    </select>
+
+  </form>
+  
+  <div id="test">
+    <!-- <h4>반가워</h4> -->
+  </div>
+<script>
+  var pants = [28, 30, 32, 34];
+  var shirts = [95, 100, 105];
+
+</script>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+
+    $('.form-select').eq(0).on('input', function(){
+      var val = $('.form-select').eq(0).val();
+    if(val == '셔츠'){
+      $('.form-select').eq(1).removeClass('hidden');
+      $('.form-select').eq(1).html('');
+
+      shirts.forEach((a, i) => {
+        $('.form-select').eq(1).append(`<option>${a}</option>`)
+      })
+    }
+    else if(val == '바지'){
+      $('.form-select').eq(1).removeClass('hidden');
+      $('.form-select').eq(1).html('');
+
+      pants.forEach(function(a, i){ // 배열 안의 데이터, 증가하는 정수
+          $('.form-select').eq(1).append(`<option>${a}</option>`)
+      }) //array에 붙일 수 있는 반복문, 콜백 필수
+
+    }
+    else{
+      $('.form-select').eq(1).addClass('hidden');
+
+    }
+  })
+
+  var obj = {name : 'kim', age : 20}
+
+  for (var key in obj) { //for in 반복문
+    console.log(obj[key]);
+  }
+
+// 반복문의 용도 -> 코드 반복, 배열 혹은 객체의 데이터를 전부 꺼낼 때.
+
+</script>
+
+
+<script>
+
+</script>
+
+<script>
+  var car2 = { name: '넥쏘', price : [50000, 3000, 400] }
+
+  $('#price').html(car2.price[0]);
+  $('#products').html(car2.name);
+  console.log(car2['name']); // == .name
+
+</script>
+  <div class="container mt-5">
+    <ul class="list">
+
+      <li class="tab-button" data-id="0">Products</li>
+
+      <li class="tab-button orange"data-id="1">Information</li>
+      <li class="tab-button" data-id="2">Shipping</li>
+    </ul>
+    <div class="tab-content">
+      <p>상품설명입니다. Product</p>
+    </div>
+    <div class="tab-content show">
+      <p>스펙설명입니다. Information</p>
+    </div>
+    <div class="tab-content">
+      <p>배송정보입니다. Shipping</p>
+    </div>
+  </div>
+  <script>
+
+    // arrow function (this를 쓸 때는 쓰지 말 것)
+    $('.list').click((e) => {
+        openTab(e.target.dataset.id);
+        console.log(e.target.dataset.id);
+    })
+
+    // $('.list').click(function(e){
+    //     openTab(e.target.dataset.id);
+    //     console.log(e.target.dataset.id);
+
+    // })
+
+    function openTab(i) {
+      $('.tab-button').removeClass('orange');
+      $('.tab-content').removeClass('show');
+      $('.tab-button').eq(i).addClass('orange');
+      $('.tab-content').eq(i).addClass('show');
+    }
+
+  </script>
+</body>
+
+</html>

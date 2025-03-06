@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+public class Ans45Calc4 {
+
+	public static void main(String[] args) {
+		// 정수 입력받아 계산하기
+		Scanner sc = new Scanner(System.in);
+		long a = sc.nextInt();
+		long b = sc.nextLong();
+		long result = a+1;
+		System.out.println(result);
+	}
+
+}

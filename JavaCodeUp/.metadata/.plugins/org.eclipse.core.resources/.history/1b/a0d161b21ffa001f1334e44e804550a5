@@ -1,0 +1,13 @@
+import java.util.Scanner;
+
+public class Ans34OctToDec {
+
+	public static void main(String[] args) {
+		// OctToDec
+		Scanner sc = new Scanner(System.in);
+		String oct = sc.next();
+		int dec = Integer.parseInt(oct);
+		System.out.print(dec);
+	}
+
+}

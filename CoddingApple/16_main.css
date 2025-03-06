@@ -1,0 +1,73 @@
+.slide-container {
+  width: 500vw;
+  /* vw는 브라우저 폭을 의미 */
+
+  /* margin-left: -100vw; */
+  
+  transition: all 1s;
+  /* transform: translateX(-100vw); */
+}
+
+.slide-box {
+  width: 100vw;
+  float: left;
+}
+
+.slide-box img {
+  width: 100%;
+}
+
+.list-group {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.black-bg {
+  width : 100%;
+  height : 100%;
+  position : fixed;
+  background : rgba(0,0,0,0.5);
+  z-index : 5;
+  padding: 30px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 1s;
+}
+.white-bg {
+  background: white;
+  border-radius: 5px;
+  padding: 30px;
+} 
+
+.main-bg {
+  background-color: darkgrey;
+  width : 100%;
+  height : 100%;
+  padding: 110px;
+  color: lightgray;
+}
+
+.main-bg.light {
+  background-color: white;
+  color: black;
+}
+
+#login {
+  color: grey;
+}
+.show-modal {
+  display : block;
+  visibility: visible;
+  opacity: 1;
+}
+
+.badge {
+  cursor: pointer;
+}
+
+#login.light {
+  color: white;
+}

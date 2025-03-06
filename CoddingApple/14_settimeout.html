@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="12_main.css" />
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <span class="navbar-brand">JSShop</span>
+        <span class="badge bg-dark">Dark ✈</span>
+        <button class="navbar-toggler" type="button">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+
+    <ul class="list-group" id="test1">
+      <li class="list-group-item">An item</li>
+      <li class="list-group-item">A second item</li>
+      <li class="list-group-item">A third item</li>
+      <li class="list-group-item">A fourth item</li>
+      <li class="list-group-item">And a fifth one</li>
+    </ul>
+
+
+    <div class="black-bg">
+      <div class="white-bg">
+        <h4>로그인하세요</h4>
+        <form action="09_success.html">
+          <div class="my-3">
+            <input type="text" class="form-control" id="id">
+           </div>
+           <div class="my-3">
+             <input type="password" class="form-control" id="pw">
+           </div>
+           <button type="submit" class="btn btn-primary" id="submit">전송</button>
+           <button type="button" class="btn btn-danger" id="close">닫기</button>
+        </form>
+      </div>
+    </div>
+
+
+    <div class="main-bg">
+      <h4>Shirts on Sale</h4>
+      <button id="login" class="btn btn-dark">로그인</button>
+    </div>
+
+    <div class="alert alert-danger">
+        <span class="count">5</span>초 이내 구매시 사은품 증정!
+    </div>
+
+    <script>
+        // setTimeout(function(){실행할 코드}, n초)
+        // n초 후에 코드를 실행합니다.
+        setTimeout(function(){ 
+            $('.alert').hide();
+        }, 5000)
+
+        // 콜백 함수 자리에 다른 함수를 넣는 것도 가능합니다.
+        setInterval(callBack(), 1000);
+
+        function callBack(){
+            console.log('1초마다 실행됩니다.');
+        }
+        /*
+
+        //자바 스크립트 문법
+        if var function
+
+        // 브라우저 API 사용법
+        document.querySelector()
+        setTimeout()
+        alert()
+
+        */
+    </script>
+
+
+
+
+
+
+    <script>
+    
+      $('#login').on('click', function(){
+        $('.black-bg').addClass('show-modal');
+      });
+
+      $('#close').on('click', function(){
+        $('.black-bg').removeClass('show-modal');
+      })
+
+    </script>
+
+    
+    <script>
+      let btnCount = 0;
+
+      $('.badge').on('click', function(){
+        btnCount++;
+        console.log(btnCount);
+        
+        if (btnCount%2!=0){
+          $('.main-bg').addClass('light')
+          $('#login').addClass('light').removeClass('btn-dark').addClass('btn-primary');
+          $('.badge').html('Light ✈').removeClass('bg-dark').addClass('bg-primary');
+        }
+        else {
+          $('.main-bg').removeClass('light')
+          $('#login').removeClass('light').removeClass('btn-primary').addClass('btn-dark');
+          $('.badge').html('Dark ✈').removeClass('bg-primary').addClass('bg-dark');
+        }
+    
+      })
+    </script>
+  </body>
+</html>
+

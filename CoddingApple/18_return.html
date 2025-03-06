@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>return</title>
+</head>
+<body>
+    <h1>콘솔 창을 열어 출력을 확인하세요!</h1>
+    <script>
+        function func(){
+            return 123; // return : 값을 반환해준다
+        }
+
+        let variable = func();
+        console.log(variable);
+  
+        
+        function vat(a){
+            var num = (a * 1.1).toFixed(1); // 소수점 첫째자리까지 반올림
+            return parseFloat(num); // 계산에 사용하고 싶다면 파싱해야 한다
+        }
+        console.log(vat(55555));
+        /* 자바스크립트의 + 연산자의 특징
+        : 하나라도 문자가 있으면 결과 값이 문자가 된다. -> 숫자로 쓰고 싶으면 파싱!
+        문자 + 123 = 문자123
+        문자 + 문자 = 문자문자 */
+
+    </script>
+    <hr>
+    <h3>숙제1 : 함수에 분과 초를 차례로 파라미터로 입력하면 ms단위로 바꿔서 뱉어주는 함수</h3>
+    콘솔 창의 값을 확인하세요<br><br>
+    <h3>숙제2 : 가격을 파라미터로 입력하면 10% 할인된 가격을 뱉는 함수</h3>
+    콘솔 창의 값을 확인하세요<br><br>
+    <script>
+        console.log('----------');
+
+        function chMS(min, sec){
+            // 분과 초를 받아 ms로 바꾼다
+            // 분(1분당 60초) + 초 * 1000
+            let time = (min * 60 + sec) * 1000;
+            return time;
+        }
+        console.log(chMS(1,30));
+        console.log(chMS(2,10));
+
+        console.log('----------');
+        
+        // 10% 할인 값을 출력한다
+        // 만약 첫 구매라면 1.5 달러 할인해준다
+        function salePrice(price, newbie){
+            let result = (price - price * 0.1).toFixed(0);
+            if (newbie==true)
+                result = parseFloat(result) - 1.5;
+            return result;
+        }
+        console.log(salePrice(70, false));
+        console.log(salePrice(10, true));
+        console.log(salePrice(10.3, false));
+        console.log(salePrice(10.3, true));
+    </script>
+</body>
+</html>

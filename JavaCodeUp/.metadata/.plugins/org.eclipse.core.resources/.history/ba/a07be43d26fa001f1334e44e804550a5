@@ -1,0 +1,12 @@
+import java.util.Scanner;
+
+public class Ans41ASCII3 {
+
+	public static void main(String[] args) {
+		// 정수의 부호 반전시키기
+		Scanner sc = new Scanner(System.in);
+		char s = sc.next().charAt(0);
+		System.out.println(s+1);
+	}
+
+}

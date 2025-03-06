@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="02_main.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="alert-box" id="alert">
+      <p id = "msg">알림창임</p>
+      <button onclick="alertTest('none')">닫기</button>
+    </div>
+    <button onclick="alertTest('block', '아이디를 입력해주세요')">버튼1</button>
+    <button onclick="alertTest('block', '비밀번호를 입력해주세요')">버튼2</button>
+
+    <script>
+      // 숙제
+      // 버튼 1을 누르면 아이디를 입력해주세요
+      // 버튼 2를 누르면 비밀번호를 입력해주세요
+      // 1. 알림창을 2개 만드는 법 (알림창 많으면 비효율적)
+      // 2. 알림창 안의 글자를 바꿔치기 하는 법
+      function alertTest(tag, msg) {
+        document.getElementById("alert").style.display = tag;
+        document.getElementById("msg").innerHTML = msg;
+      }
+
+      
+    </script>
+  </body>
+</html>

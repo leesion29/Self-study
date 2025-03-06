@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+public class Ans42 {
+
+	public static void main(String[] args) {
+		// 다음 문자 출력하기
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		int result = a/b;
+		System.out.println(result);
+	}
+
+}

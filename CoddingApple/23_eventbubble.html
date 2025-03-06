@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="19_main.css" />
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <span class="navbar-brand">JSShop</span>
+        <div>
+        <span class="badge bg-dark">Dark ✈</span>
+        <button class="navbar-toggler" type="button">
+          <span class="navbar-toggler-icon"></span>
+          </div>
+        </button>
+      </div>
+    </nav>
+
+    <ul class="list-group" id="test1">
+      <li class="list-group-item">An item</li>
+      <li class="list-group-item">A second item</li>
+      <li class="list-group-item">A third item</li>
+      <li class="list-group-item">A fourth item</li>
+      <li class="list-group-item">And a fifth one</li>
+    </ul>
+
+    <div class="black-bg">
+      <div class="white-bg">
+        <h4>로그인하세요</h4> <!-- 이거 클릭하면 앞의 것도 클릭 -> 총 3번 클릭 된 것임 -->
+        <form action="javascript:alert('로그인 완료!'); location.reload(true);">
+          <div class="my-3">
+            <input type="text" class="form-control" id="id" />
+          </div>
+          <div class="my-3">
+            <input type="password" class="form-control" id="pw" />
+          </div>
+          <button type="submit" class="btn btn-primary" id="submit">
+            전송
+          </button>
+          <button type="button" class="btn btn-danger" id="close">닫기</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+        /* 모든 브라우저는 이벤트 버블링이 일어난다 (이벤트가 상위 html로 퍼짐)*/
+        document.querySelector('.black-bg').addEventListener('click', 
+        function(e){
+            // // 유용한 이벤트 함수
+            // e.target; // 유저가 실제로 클릭한 것.
+            // e.currentTarget; // 이벤트 리스너가 달린 곳 = this;
+            // e.preventDefault(); // 이벤트의 기본 동작을 막는다(클릭 안 한 것 처럼. 예시 -> 제출안되게 하기)
+            // e.stopPropagation(); // 내 상위요소로 이벤트 버블링 막아준다.
+            // document.querySelector('.black-bg').classList.remove('show-modal');
+
+            if (e.target == document.querySelector('.black-bg')) { // 제이쿼리의 경우 $().is($())로 비교하는 편이 안전하다.
+                document.querySelector('.black-bg').classList.remove('show-modal');
+            }
+            // 이벤트 버블링은 항상 일어난다 -> 여러 이벤트 함수로 제어 가능
+        })
+    </script>
+
+    <div class="main-bg">
+      <h4>Shirts on Sale</h4>
+      <button id="login" class="btn btn-danger">로그인</button>
+    </div>
+
+
+    <script>
+      let nowImgIs = 1;
+
+      $('.next').on('click', function(){
+        if (nowImgIs == 1){
+          $('.slide-container').css('transform', 'translateX(-100vw)');
+          nowImgIs = 2;
+        } else if (nowImgIs == 2){
+          $('.slide-container').css('transform', 'translateX(-200vw)');
+          nowImgIs = 3;
+        }
+      })
+
+      $('.prev').on('click', function(){
+        if (nowImgIs == 2){
+        $('.slide-container').css('transform', 'translateX(0vw)');
+        nowImgIs = 1;
+        }
+        if (nowImgIs == 3){
+        $('.slide-container').css('transform', 'translateX(-100vw)');
+        nowImgIs = 2;
+        }
+      })
+      $('.slide-1').on('click', function(){
+          $('.slide-container').css('transform', 'translateX(0vw)');
+          nowImgIs = 1;
+      })
+      $('.slide-2').on('click', function(){
+        $('.slide-container').css('transform', 'translateX(-100vw)');
+          nowImgIs = 2;
+      })
+      $('.slide-3').on('click', function(){
+        $('.slide-container').css('transform', 'translateX(-200vw)');
+        nowImgIs = 3;
+       })
+
+
+      $("#login").on("click", function () {
+        $(".black-bg").addClass("show-modal");
+      });
+
+      $("#close").on("click", function () {
+        $(".black-bg").removeClass("show-modal");
+      });
+
+      $("form").on("submit", function (e) {
+        let id = document.getElementById("id").value;
+        let pw = document.getElementById("pw").value;
+        console.log(id);
+        if (
+          document.getElementById("id").value == "" ||
+          document.getElementById("pw").value == ""
+        ) {
+          alert("please input your id and pw");
+          e.preventDefault();
+        }
+        if (/\S+@\S+\.\S+/.test(id) == false) {
+          alert("The id value must be in email format.");
+          e.preventDefault();
+        } else if (pw.length < 6) {
+          alert("this password is too short");
+          e.preventDefault();
+        }
+      });
+
+      let btnCount = 0;
+      $('.badge').on('click', function(){
+        btnCount++;
+        console.log(btnCount);
+        if (btnCount%2!=0){
+          $('.main-bg').addClass('light')
+          $('#login').addClass('light').removeClass('btn-danger').addClass('btn-primary');
+          $('.badge').html('Light ✈').removeClass('bg-dark').addClass('bg-primary');
+        }
+        else {
+          $('.main-bg').removeClass('light')
+          $('#login').removeClass('light').removeClass('btn-primary').addClass('btn-danger');
+          $('.badge').html('Dark ✈').removeClass('bg-primary').addClass('bg-dark');
+        }
+      })
+    </script>
+  </body>
+</html>

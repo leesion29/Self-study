@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="02_main.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="alert-box" id="alert">
+      알림창임
+      <button onclick="alertTest('none')">닫기</button>
+    </div>
+    <button onclick="alertTest('block')">버튼</button>
+    <script>
+      // 가변적으로 변하는 값을 파라미터로 둔다
+
+                        // 파라미터(매개변수)
+      function alertTest(parameter) {
+        document.getElementById('alert').style.display = parameter;
+      }
+
+      function plus(a, b){
+        console.log(a+b);
+      }
+      
+      plus(1, 2)
+      plus(10, 20)
+      plus(100, 200)
+
+    </script>
+  </body>
+</html>

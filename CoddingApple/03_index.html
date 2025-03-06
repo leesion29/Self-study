@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="02_main.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="alert-box" id="alert">
+      알림창임
+      <button onclick="document.getElementById('alert').style.display = 'none';">닫기</button>
+    </div>
+    <button onclick="alertOpen()">버튼</button>
+
+    <script>
+    // 코드의 간결성 유지 및 재사용을 위해 함수를 사용할 수 있다.
+    // open close는 예약어이므로 함수 명으로 사용할 수 없다.
+    // 명시적인 함수 명을 입력하자(소문자, 카멜 표기법)
+      function alertOpen() {
+        document.getElementById('alert').style.display = 'block';
+      }
+
+    </script>
+  </body>
+</html>
