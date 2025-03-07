@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Ans55logical3 {
+public class Ans55Logical3 {
 
 	public static void main(String[] args) {
 		//참 또는 거짓이 입력되면
