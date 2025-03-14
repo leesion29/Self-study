@@ -184,7 +184,9 @@
         // 항목이 없다면 기존의 array를 수정 해야 합니다.
 
         $('.buy').on('click', function(){
-            console.log($('.buy').eq(1).siblings("h5").html);
+            var test = $('h5.buy').siblings();
+            console.log(test);
+            localStorage.setItem('cart', test);
         })
         // 숙제 2: cart.html 방문 시 localStorage에 저장된 상품명들을 다 보여주기
     </script>
