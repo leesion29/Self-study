@@ -1,11 +1,13 @@
-package com.codingapple.shop;
+package com.mysite.sbb;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ShopApplication {
+public class MsgTestApplication {
+
 	public static void main(String[] args) {
-		SpringApplication.run(ShopApplication.class, args);
+		SpringApplication.run(MsgTestApplication.class, args);
 	}
+
 }
