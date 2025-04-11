@@ -2,21 +2,23 @@ import java.util.Scanner;
 
 public class Ans92TogetherSolveDay {
 	public static void main(String[] args) {
-		// 이상한 수열을 만들어보자.
-		// 시작 값 a
-		// 다음 수 a * m + d
+		// 같은 날 동시에 가입한 3명의 사람들이 온라인 채점시스템에 들어와 문제를 푸는 날짜가
+		// 매우 규칙적이라고 할 때, 다시 모두 함께 문제를 풀게 되는 그날은 언제일까?
+		// 예를 들어 3명이 같은 날 가입/등업하고, 각각 3일마다, 7일마다, 9일마다
+		// 한 번씩 들어온다면, 처음 가입하고 63일 만에 다시 3명이 함께 문제를 풀게 된다.
+
 		Scanner sc = new Scanner(System.in);
 
-		long a = sc.nextLong(); // 시작 값
-		long m = sc.nextLong();  // 곱할 값
-		long d = sc.nextLong();  // 더할 값
-		long n = sc.nextLong();  // 몆 번째 수인지 나타내는 정수
+		int day = 1;
 
-		Long i = 1L;
-		while(i != n) {
-			a = a * m + d;
-			++i;
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		int c = sc.nextInt();
+
+		while(day%a!=0 || day%b!=0|| day%c!=0) {
+			day++;
 		}
-		System.out.println(a);
+		System.out.println(day);
+
 	}
 }
