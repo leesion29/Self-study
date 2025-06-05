@@ -1,0 +1,20 @@
+table, tr, td, th {
+  border: solid 1px #61300f;
+  border-collapse: collapse;
+}
+th {
+  background-color: #ce641e;
+  color : white;
+}
+tr:nth-child(odd) {
+  background-color: white;
+}
+tr:nth-child(even) {
+  background-color: #ffcba8;
+}
+tr:nth-child(odd):hover {
+  background-color: lightgray;
+}
+tr:nth-child(even):hover {
+  background-color: #d39368;
+}

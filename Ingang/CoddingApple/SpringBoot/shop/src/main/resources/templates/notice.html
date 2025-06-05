@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link href="/notice.css" rel="stylesheet">
+</head>
+<body>
+  <table>
+    <thead>
+    <tr>
+    <th>id</th>
+    <th>글 제목</th>
+    <th>날짜</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="n : ${notices}">
+      <td th:text="${n.Id}"></td>
+      <td th:text="${n.title}"></td>
+      <td th:text="${n.date}"></td>
+    </tr>
+    </tbody>
+  </table>
+</body>
+</html>
