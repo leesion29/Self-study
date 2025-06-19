@@ -1,4 +1,5 @@
-# 리스트       0         1       2
+## [리스트]
+# 인덱스       0         1       2
 icecream = ['바닐라', '딸기', '초코']
 print(icecream)
 print(icecream[2])

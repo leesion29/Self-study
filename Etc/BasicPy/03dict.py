@@ -1,4 +1,5 @@
-# 딕셔너리  key     :   value
+## [딕셔너리]
+# 키:값 구조  key     :   value
 icecream = {'kind' : 'choco', 'price' : 2500}
 
 print(icecream)
